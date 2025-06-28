@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/nav.ejs') %>
+    <form action="/login" method="post">
+        <input type="text" placeholder="firstname" name="firstName">
+        <input type="text" placeholder="lastname" name="lastName">
+        <input type="text" placeholder="email" name="email">
+        <input type="text" placeholder="password" name="password">
+
+        <button> submit</button>
+
+
+        <a href="/allUsers">go to all users page</a>
+    </form>
+</body>
+</html>

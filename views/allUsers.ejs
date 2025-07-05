@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .buton{
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
     <%- include('partials/nav.ejs') %>
 
     <% users.forEach((user, index) => { %>
             <h1><%= user.firstName+ ' '+ user.lastName %></h1>
+            <form action="/delete/<%= index %>" method="post">
+                <button class="buton">delete</button>
+            </form>
+            <form action="/edit/<%= index %>" method="post">
+                <button class="btn btn-primary">edit</button>
+            </form>
     <% }) %>
 </body>
 </html>

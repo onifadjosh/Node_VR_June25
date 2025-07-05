@@ -1,9 +1,18 @@
 const express = require("express");
+const mongoose = require('mongoose')
 const app = express();
 // const ejs = require("ejs");
 app.set("view engine", "ejs");
 app.use(express.urlencoded({extended:true}))
 
+let URI = "mongodb+srv://onifadjosh:Pamilerin1.@cluster0.imcgp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+mongoose.connect(URI)
+.then(()=>{
+  console.log('database connected successfully')
+})
+.catch((err)=>{
+  console.log(err)
+})
 //get, post, put, delete, patch
 
 let student = {
@@ -71,6 +80,20 @@ app.post('/login', (req, res)=>{
 
 app.get('/allUsers', (req, res)=>{
   res.render('allUsers', {users})
+})
+
+
+app.post('/delete/:id', (req, res)=>{
+  // const id = req.params.index
+  const {id} = req.params
+  console.log(id)
+  users.splice(id,1)
+  res.render('allUsers', {users})
+})
+
+app.get('/condition', (req, res)=>{
+  let gender ='female'
+  res.render('condition', {gender})
 })
 
 

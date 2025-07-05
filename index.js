@@ -5,7 +5,7 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.urlencoded({extended:true}))
 
-let URI = "mongodb+srv://onifadjosh:Pamilerin1.@cluster0.imcgp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+let URI = "mongodb+srv://onifadjosh:<your_password> @cluster0.imcgp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 mongoose.connect(URI)
 .then(()=>{
   console.log('database connected successfully')

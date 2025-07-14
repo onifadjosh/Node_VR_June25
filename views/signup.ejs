@@ -6,11 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <%- include('partials/nav.ejs') %>
+      <%- include('partials/nav.ejs') %>
 
-
-    <%= message %>
-    <form action="/login" method="post">
+      <%= message %>
+    <form action="/signup" method="post">
         <input type="text" placeholder="firstname" name="firstName">
         <input type="text" placeholder="lastname" name="lastName">
         <input type="text" placeholder="email" name="email">
@@ -19,7 +18,7 @@
         <button> submit</button>
 
 
-        <a href="/allUsers">go to all users page</a>
+        
     </form>
 </body>
 </html>
